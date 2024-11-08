@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Home</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar (optional, if you have a navbar partial, include it here) -->
+    <%-include('../partials/navbar') %>
+
+    <!-- Admin Home Content -->
+    <div class="container my-5">
+        <h1 class="text-center mb-4">Admin Dashboard</h1>
+        <p class="text-center">Welcome to the Admin Dashboard of SciAstra. Manage your content and courses here.</p>
+        
+        <div class="row justify-content-center my-5">
+            <!-- Add Course Button -->
+            <div class="col-md-4 d-flex justify-content-center mb-3">
+                <a href="/admin/add-course" class="btn btn-primary btn-lg w-100">
+                    <i class="bi bi-plus-circle"></i> Add Course
+                </a>
+            </div>
+
+            <!-- Add/Schedule Blog Button -->
+            <div class="col-md-4 d-flex justify-content-center mb-3">
+                <a href="/admin/add-blog" class="btn btn-success btn-lg w-100">
+                    <i class="bi bi-calendar-plus"></i> Add/Schedule Blog
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer (optional, if you have a footer partial, include it here) -->
+    <%-include('../partials/footer') %>
+
+    <!-- Bootstrap JS (if needed for interactive components) -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

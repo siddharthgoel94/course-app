@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | SciAstra</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="/styles/courses.css">
+</head>
+
+<body>
+    <%-include('../partials/navbar')%>
+    <div class="main">
+
+    
+    <header>
+        <h1>Welcome to SciAstra</h1>
+        <p>Your platform for knowledge and learning!</p>
+    </header>
+
+    <section id="discounted-courses">
+        <h2>Discounted Courses</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor maxime doloremque excepturi? Quisquam repellat minima error reprehenderit quo quam, exercitationem quod dolores aut vitae pariatur laudantium tempore aspernatur, rem veniam.
+        Nobis rem atque laudantium dolor doloremque praesentium nesciunt voluptatibus autem quas harum dolorem tempora quasi fuga sed debitis illum cum ad illo eveniet, adipisci deserunt aliquam unde dolores. Voluptatem, quas?
+        Nostrum, adipisci? Quae omnis molestiae sunt perspiciatis. Dolores numquam nulla velit vel harum possimus? Sint ad iste facilis? Vero fugit suscipit iusto sunt doloribus qui quibusdam a reprehenderit! Aliquam, doloribus.
+        Illum modi cupiditate iste delectus assumenda velit labore nobis in ratione, quas ducimus placeat! At nostrum voluptate qu  is natus necessitatibus, illum tempora eligendi deleniti esse! Maxime rerum accusantium excepturi nesciunt!
+        Aperiam error culpa cumque soluta hic fuga aliquam atque qui at ipsam, distinctio nam quod eveniet eaque quo quibusdam iure, libero, quia corrupti! Hic consequuntur eum voluptatem odio quasi repudiandae!
+        Ab ex dolor in omnis, ullam quidem quas iste. Aut aliquid, unde accusantium recusandae nulla at enim, pariatur doloribus vitae ipsum architecto illum incidunt porro excepturi necessitatibus sequi reiciendis eum.
+        Non dolores eos iusto, placeat totam iure fugit qui! Iusto quis dignissimos dolor laudantium, amet illo repudiandae laborum magnam a earum id hic. Voluptatibus architecto dolor exercitationem unde ut non!
+        Odio omnis iste consequuntur molestiae quasi, fuga quos aspernatur qui perferendis ducimus harum error quis recusandae a culpa sunt optio dicta commodi ad voluptate iure vitae veniam! Architecto, corrupti autem!
+        Sed dolores, impedit voluptas illum aliquam natus incidunt eligendi architecto sequi deserunt, molestiae, delectus dolorum repudiandae aspernatur porro. Vitae nobis molestias tenetur quo cupiditate soluta, enim dolor repellat placeat aperiam?
+        Dicta, ipsa. Quis expedita mollitia atque blanditiis, exercitationem et ullam assumenda sequi, nemo corporis odio tenetur illo doloribus placeat velit hic culpa, quo qui unde. Harum qui sed earum quis.</p>
+        <div class="courses-container">
+            
+            <% allCourses.forEach(course => { %>
+                <div class="course-card">
+                    <h3 class="fs-4"><%= course.title %></h3>
+                    <p class="fs-6"><%= course.description%></p>
+                    <p class="fs-6">Original Price: <s>₹<%= course.price %></s></p>
+                    <p class="fs-5  ">Discounted Price: ₹<%= course.price*(1-course.discountPercentage/100) %></p>
+                    <% if (role=="user") { %>
+                        <a href="checkout/<%=course.id%>" class="btn btn-primary mt-auto purchase-button">Purchase</a>
+                    <% }else{ %>
+                        <a href="#"class="btn btn-primary disabled mt-auto purchase-button">Login as a user to purchase courses</a>
+                        <% } %>
+
+                    
+                </div>
+            <% }) %>
+
+        </div>
+    </section>
+</div>
+<%-include('../partials/footer')%>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        .error-container {
+            text-align: center;
+            background: #fff;
+            border: 1px solid #f5c6cb;
+            padding: 30px;
+            max-width: 500px;
+            width: 100%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .error-container h1 {
+            font-size: 2em;
+            margin: 0;
+        }
+        .error-container p {
+            font-size: 1.2em;
+            margin: 10px 0 20px;
+        }
+        .error-container a {
+            color: #155724;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .error-container a:hover {
+            text-decoration: underline;
+        }
